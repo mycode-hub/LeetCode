@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int findMin(vector<int>& A) {
+        int n = A.size()-1;
+        long mid, left = 0, right = A.size()-1;
+        if(A[0] <= A[n])
+            return A[0];
+        while( left <= right)
+        {
+            mid = (left + right) /2;
+            //cout<<left<<" "<<mid<<" "<<right<<" \n";
+            if( mid < right && A[mid] > A[mid +1 ])
+                return A[mid+1];
+            if( (A[mid] <= A[ (mid +n -1) % n ]) && (A[mid] <= A[ ( mid +1) % n ]) )
+                return A[mid];
+            else if( A[mid] >= A[left] )
+                left = mid+1;
+            else
+                right = mid-1;
+        }
+        return -1;
+    }
+};
