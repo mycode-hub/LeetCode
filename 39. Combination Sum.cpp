@@ -24,5 +24,6 @@ public:
         vector<int> temp;
         backtrack(candidates,target,temp, result,0);
         return result;
+
     }
 };
