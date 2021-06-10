@@ -36,7 +36,7 @@ public:
                 }
                 if( x < n-1 && ! visited[x+1])
                 {
-                    visited[x+1] = 1;
+                    visited[x+1] = 1;;
                     q.push(x+1);
                 }
                 same_value.clear();
