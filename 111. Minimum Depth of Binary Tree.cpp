@@ -23,8 +23,10 @@ public:
         helper(root->right , level +1, mx);
     }
     int minDepth(TreeNode* root) {
+        if( !root)
+            return 0;
         int level =1 , mx = INT_MAX; 
-       helper( root, level , mx);
-        return mx;
+        helper( root, level , mx);
+        return (mx);
     }
 };
